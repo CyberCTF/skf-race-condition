@@ -1,0 +1,14 @@
+{
+  "title": "OWASP SKF Race Condition",
+  "description": "A Flask page that writes the submitted name into hello.sh, checks the script with a pattern and removes it when invalid. The script is run by other requests in between.",
+  "question": "Win the race between writing and validating hello.sh to get your own command executed on the server.",
+  "category": "WEB",
+  "difficulty": 3,
+  "evidence_kind": "SECRET",
+  "capabilities": [
+    "race-condition",
+    "command-injection",
+    "toctou",
+    "concurrency"
+  ]
+}

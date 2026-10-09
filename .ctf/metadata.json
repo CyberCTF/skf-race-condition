@@ -4,11 +4,5 @@
   "question": "Win the race between writing and validating hello.sh to get your own command executed on the server.",
   "category": "WEB",
   "difficulty": 3,
-  "evidence_kind": "SECRET",
-  "capabilities": [
-    "race-condition",
-    "command-injection",
-    "toctou",
-    "concurrency"
-  ]
+  "evidence_kind": "SECRET"
 }

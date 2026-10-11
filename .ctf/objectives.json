@@ -1,0 +1,52 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Win the race to run your own command and read /ctf/flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "FLAG{%s}"
+      },
+      "dev": "FLAG{dev-skf-race-condition}",
+      "hints": [
+        "The script is written, then checked, then removed; other requests run it in between.",
+        "Read about time-of-check to time-of-use (TOCTOU) race conditions."
+      ],
+      "steps": [
+        {
+          "key": "file",
+          "title": "Find the shared file",
+          "prompt": "Which script file does the application write and then run?",
+          "check": {
+            "answer": [
+              "hello.sh"
+            ]
+          }
+        },
+        {
+          "key": "param",
+          "title": "Find the input",
+          "prompt": "Which parameter carries the name written into it? (name)",
+          "check": {
+            "answer": [
+              "person"
+            ]
+          }
+        },
+        {
+          "key": "class",
+          "title": "Name the weakness",
+          "prompt": "What class of vulnerability is this? (acronym accepted)",
+          "check": {
+            "answer": [
+              "race condition",
+              "toctou",
+              "time of check time of use"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
